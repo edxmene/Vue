@@ -1,11 +1,20 @@
 <template>
   <div>
+    <header>
+      <slot name="header">
+        <h2>Default header</h2>
+      </slot>
+    </header>
     <slot></slot>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    console.log(this.$slots.header);
+  },
+};
 </script>
 
 <style scoped>
